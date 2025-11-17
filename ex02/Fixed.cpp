@@ -41,6 +41,10 @@ void Fixed::setRawBit(int const raw) {
     this->_fixedValue = raw;
 }
 
+bool Fixed::operator>(const Fixed& n) const {
+    
+}
+
 float Fixed::toFloat(void) const {
     return static_cast<float>(_fixedValue) / (1 << _fractBits);
 }
