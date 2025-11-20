@@ -2,7 +2,7 @@ NAME := ex02
 SRCS := main.cpp Fixed.cpp
 OBJS = $(SRCS:.cpp=.o)
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address,undefined -fno-omit-frame-pointer -g -O0
+CFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address undefined -fno-omit-frame-pointer -g -O0
 RM = rm -f
 all: $(NAME)
 

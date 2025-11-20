@@ -52,110 +52,82 @@ int Fixed::toInt(void) const {
 std::ostream& operator<<(std::ostream& out, const Fixed & fixed) {
     return out << fixed.toFloat();
 }
-bool Fixed::operator>(const Fixed& n) const
-{
+
+bool Fixed::operator>(const Fixed& n) const {
 	return _fixedValue > n._fixedValue; 
 }
 
-bool Fixed::operator<(const Fixed& n) const
-{
+bool Fixed::operator<(const Fixed& n) const {
 	return _fixedValue < n._fixedValue;
 }
 
-bool Fixed::operator>=(const Fixed& n) const
-{
+bool Fixed::operator>=(const Fixed& n) const {
 	return _fixedValue >= n._fixedValue;
 }
 
-bool Fixed::operator<=(const Fixed& n) const
-{
+bool Fixed::operator<=(const Fixed& n) const {
 	return _fixedValue <= n._fixedValue;
 }
 
-bool Fixed::operator==(const Fixed& n) const
-{
+bool Fixed::operator==(const Fixed& n) const {
 	return _fixedValue == n._fixedValue;
 }
 
-bool Fixed::operator!=(const Fixed& n) const
-{
+bool Fixed::operator!=(const Fixed& n) const {
 	return _fixedValue != n._fixedValue;
 }
 
-// Arithmetic Operators
-Fixed Fixed::operator+(const Fixed& n) const
-{
+Fixed Fixed::operator+(const Fixed& n) const {
 	return Fixed(this->toFloat() + n.toFloat());
 }
 
-Fixed Fixed::operator-(const Fixed& n) const
-{
+Fixed Fixed::operator-(const Fixed& n) const {
 	return Fixed(this->toFloat() - n.toFloat());
 }
 
-Fixed Fixed::operator*(const Fixed& n) const
-{
+Fixed Fixed::operator*(const Fixed& n) const {
 	return Fixed(this->toFloat() * n.toFloat());
 }
 
-Fixed Fixed::operator/(const Fixed& n) const
-{
-	int	divide;
-
-	divide = n.toFloat();
-	if (divide == 0)
-	{
-		std::cout << "Error: Division by 0 forbidden."<<std::endl;
-		return (-1);
-	}
+Fixed Fixed::operator/(const Fixed& n) const {
 	return Fixed(this->toFloat() / n.toFloat());
 }
 
-// Incrementation / decrementation
-Fixed& Fixed::operator++()
-{
+Fixed& Fixed::operator++() {
 	_fixedValue++;
 	return *this;
 }
 
-Fixed Fixed::operator++(int)
-{ 
+Fixed Fixed::operator++(int) {
 	Fixed tmp(*this);
 	_fixedValue++;
 	return tmp;
 }
 
-Fixed& Fixed::operator--()
-{
+Fixed& Fixed::operator--() {
 	_fixedValue--;
 	return *this;
 }
 
-Fixed Fixed::operator--(int)
-{ 
+Fixed Fixed::operator--(int) {
 	Fixed tmp(*this);
 	_fixedValue--;
 	return tmp;
 }
 
-// --- Fonctions min / max ---
-Fixed& Fixed::min(Fixed& a, Fixed& b)
-{
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
 	return (a < b ? a : b);
 }
 
-const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
-{
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
 	return (a < b ? a : b);
 }
 
-Fixed& Fixed::max(Fixed& a, Fixed& b)
-{
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
 	return (a > b ? a : b);
 }
 
-const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
-{
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
 	return (a > b ? a : b);
 }
 
